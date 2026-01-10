@@ -1,16 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class EventHandler : MonoBehaviour
 {
+    public string sceneToLoad = "Level";
     public GameObject mainMenuPanel;
     public GameObject optionsPanel;
     public GameObject creditsPanel;
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level"); // Your first level
+        SceneManager.LoadScene(sceneToLoad);
     }
-
     public void OpenOptions()
     {
         mainMenuPanel.SetActive(false);

@@ -1588,6 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce790cc8f6f3e043a140d9ba21074d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  sceneToLoad: Game
   mainMenuPanel: {fileID: 805979559}
   optionsPanel: {fileID: 1076688770}
   creditsPanel: {fileID: 741260302}
