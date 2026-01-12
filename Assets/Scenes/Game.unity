@@ -169,7 +169,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &56001655
 Transform:
@@ -744,7 +744,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &211966720
 Transform:
@@ -755,7 +755,7 @@ Transform:
   m_GameObject: {fileID: 211966719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.77655, y: -6.50076, z: 10.22652}
+  m_LocalPosition: {x: -17.77655, y: -2.6607602, z: 10.22652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -763,7 +763,7 @@ Transform:
   - {fileID: 187141553}
   - {fileID: 1405066628}
   - {fileID: 56001655}
-  m_Father: {fileID: 2636756990299096713}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332875614
 GameObject:
@@ -1174,7 +1174,7 @@ GameObject:
   m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &690416091
 Transform:
@@ -1563,13 +1563,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977483171}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.066999435, y: 0.22, z: -8.62}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0.066999435, y: 24.16, z: 2}
   m_LocalScale: {x: 0.11451867, y: 0.11451866, z: 0.11451867}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1636285892}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &977483173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,7 +1753,7 @@ GameObject:
   - component: {fileID: 980553719}
   - component: {fileID: 980553720}
   m_Layer: 5
-  m_Name: audioo
+  m_Name: audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1792,7 +1792,7 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.75
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2256,7 +2256,7 @@ MonoBehaviour:
   spawnArea: {x: 10, y: 0, z: 10}
   spawnHeight: 0
   monsterPrefabs: []
-  spawnInterval: 0.5
+  spawnInterval: 1
   timeLimit: 480
   winScene: Win
   timerText: {fileID: 185506681}
@@ -4459,7 +4459,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1739713644
 MonoBehaviour:
@@ -5543,7 +5543,6 @@ Transform:
   - {fileID: 4235898721465906139}
   - {fileID: 8264861760574117083}
   - {fileID: 464418488931259250}
-  - {fileID: 211966720}
   m_Father: {fileID: 1636285892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2709869913813100759
@@ -6798,7 +6797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flashlight
   flashlight: {fileID: 2232318642577743059}
-  duration: 0.1
+  duration: 0.01
   distanceFromCamera: 2
 --- !u!23 &7147228777439230045
 MeshRenderer:
@@ -7655,6 +7654,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 211966720}
   - {fileID: 1853347876}
   - {fileID: 1636285892}
   - {fileID: 1236985777}

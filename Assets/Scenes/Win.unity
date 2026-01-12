@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 82c4a32df14065a4b95f9e26a565f565, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: a9475b9c15b5b8e42a5e485c8c45a9cd, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a41b3316933c0e44898200bc63422733, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -147,7 +147,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 60e398f6962ea4a47befa84d26fa2839, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2fee88f06588ca046b6a9e7a62766eae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -862,7 +862,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8078432, g: 0, b: 0.027450982, a: 1}
+  m_Color: {r: 0, g: 0.5493182, b: 0.80784315, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1199,20 +1199,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1515988713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19091ed2b59a6e74d9b39fc31c488bfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a0cc57ce852a9488eba8b2773564a1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Diagfordeath
+  m_EditorClassIdentifier: Assembly-CSharp::DiagforWin
   textBox: {fileID: 1515988715}
   typeSound: {fileID: 697365357}
   dialogueLines:
-  - "Soldier death status\u2026"
-  - True.
-  - "Accessing soldier\u2019s consciousness"
+  - Accessing Soldier's Consciousness
   - Accessed.
-  - "Giving options\u2026"
+  - Printing Dialouge...
+  - Soldier.
+  - Great job protecting those innocent children as you can
+  - You tried your best to save [[The amount of children that hasnt died]]].
+  - Giving Options...
   - Given
-  - Choose in under 8 minutes, soldier
-  sceneToLoad: Game
+  - Good Night.
   charDelay: 0.05
 --- !u!1 &1571476971
 GameObject:

@@ -6,6 +6,7 @@ public class EventHandler : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject optionsPanel;
     public GameObject creditsPanel;
+    public GameObject changelogPanel;
     public void PlayGame()
     {
         SceneManager.LoadScene(sceneToLoad);
@@ -29,6 +30,16 @@ public class EventHandler : MonoBehaviour
     {
         mainMenuPanel.SetActive(true);
         creditsPanel.SetActive(false);
+    }
+    public void OpenChangelog()
+    {
+        mainMenuPanel.SetActive(false);
+        changelogPanel.SetActive(true);
+    }
+    public void CloseChangelog()
+    {
+        mainMenuPanel.SetActive(true);
+        changelogPanel.SetActive(false);
     }
     public void ExitGame()
     {

@@ -213,7 +213,7 @@ MonoBehaviour:
   sceneToLoad: Death
   damageMin: 20
   damageMax: 50
-  deathDelay: 5
+  deathDelay: 4
 --- !u!1 &7181249816646091143
 GameObject:
   m_ObjectHideFlags: 0

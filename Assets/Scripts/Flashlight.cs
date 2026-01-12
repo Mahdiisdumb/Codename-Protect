@@ -1,65 +1,31 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class Flashlight : MonoBehaviour
-{
-    public Light flashlight;
-    public float duration = 0.1f;
-    public float distanceFromCamera = 2f;
-    private float timer = 0f;
-    private Camera cam;
-    private float lastTapTime = 0f;
-    private float doubleTapThreshold = 0.3f;
-    void Awake()
-    {
-        cam = Camera.main;
-    }
-
-    void Update()
-    {
-        Vector3 targetPos = transform.position;
-        if (Mouse.current != null)
-        {
-            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-            targetPos = cam.ScreenToWorldPoint(new Vector3(
-                mouseScreenPos.x,
-                mouseScreenPos.y,
-                distanceFromCamera
-            ));
-
-            if (Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                Flash();
-            }
-        }
-        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
-        {
-            var touch = Touchscreen.current.primaryTouch;
-            Vector2 touchPos = touch.position.ReadValue();
-            targetPos = cam.ScreenToWorldPoint(new Vector3(
-                touchPos.x,
-                touchPos.y,
-                distanceFromCamera
-            ));
-            if (touch.press.wasPressedThisFrame)
-            {
-                if (Time.time - lastTapTime < doubleTapThreshold)
-                {
-                    Flash();
-                }
-                lastTapTime = Time.time;
-            }
-        }
-        transform.position = targetPos;
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-                flashlight.enabled = false;
-        }
-    }
-    private void Flash()
-    {
-        flashlight.enabled = true;
-        timer = duration;
-    }
+public class Flashlight:MonoBehaviour{
+public Light flashlight;
+public float duration=0.1f,distanceFromCamera=2f;
+float timer,lastTapTime;
+float doubleTapThreshold=0.3f;
+Camera cam;
+Player p;
+void Awake(){cam=Camera.main;p=FindObjectOfType<Player>();}
+void Update(){
+if(p&&p.playerHP<=0){flashlight.enabled=false;return;}
+Vector3 t=transform.position;
+if(Mouse.current!=null){
+var m=Mouse.current.position.ReadValue();
+t=cam.ScreenToWorldPoint(new Vector3(m.x,m.y,distanceFromCamera));
+if(Mouse.current.leftButton.wasPressedThisFrame)Flash();
+}
+if(Touchscreen.current!=null&&Touchscreen.current.primaryTouch.press.isPressed){
+var tc=Touchscreen.current.primaryTouch;
+var tp=tc.position.ReadValue();
+t=cam.ScreenToWorldPoint(new Vector3(tp.x,tp.y,distanceFromCamera));
+if(tc.press.wasPressedThisFrame){
+if(Time.time-lastTapTime<doubleTapThreshold)Flash();
+lastTapTime=Time.time;
+}}
+transform.position=t;
+if(timer>0&&(timer-=Time.deltaTime)<=0)flashlight.enabled=false;
+}
+void Flash(){flashlight.enabled=true;timer=duration;}
 }
