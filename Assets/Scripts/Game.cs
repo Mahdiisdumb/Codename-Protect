@@ -17,13 +17,17 @@ public class Game : MonoBehaviour
     private float spawnTimer;
     void Start()
     {
-        monsterPrefabs = Resources.LoadAll<GameObject>("monsters");
+        if (monsterPrefabs == null || monsterPrefabs.Length == 0)
+            monsterPrefabs = Resources.LoadAll<GameObject>("monsters");
         if (monsterPrefabs.Length == 0)
         {
             Debug.LogError("No prefabs found in Resources/monsters!");
+            enabled = false;
             return;
         }
         spawnTimer = spawnInterval;
+        for (int i = 0; i < spawnCount; i++)
+            SpawnRandomMonster();
     }
     void Update()
     {
@@ -48,6 +52,7 @@ public class Game : MonoBehaviour
     }
     void SpawnRandomMonster()
     {
+        if (monsterPrefabs.Length == 0) return;
         GameObject prefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Length)];
         Vector3 randomPos = new Vector3(
             transform.position.x + Random.Range(-spawnArea.x / 2f, spawnArea.x / 2f),

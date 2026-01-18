@@ -1,4 +1,4 @@
-const cacheName = "Mahdi Studios-Codename-Protect-0.01";
+const cacheName = "Mahdi Studios-Codename-Protect-0.03";
 const contentToCache = [
     "Build/Web.loader.js",
     "Build/Web.framework.js",

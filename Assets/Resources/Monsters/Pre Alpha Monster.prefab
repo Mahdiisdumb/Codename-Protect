@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 8862371700734584456}
   - component: {fileID: 512132569116945415}
   m_Layer: 0
-  m_Name: Hurt
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,8 +193,9 @@ MonoBehaviour:
   agent: {fileID: 2563865036478434353}
   waypointTag: Point
   playerTag: Point
-  flashesToDieMin: 2
-  flashesToDieMax: 6
+  flashesToDieMin: 5
+  flashesToDieMax: 25
+  hitDelay: 0.09
 --- !u!114 &512132569116945415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,10 +210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageZone
   player: {fileID: 0}
   radius: 20
-  damagePerSecond: 10
+  damagePerSecondMin: 1
+  damagePerSecondMax: 25
   sceneToLoad: Death
-  damageMin: 20
-  damageMax: 50
   deathDelay: 4
 --- !u!1 &7181249816646091143
 GameObject:

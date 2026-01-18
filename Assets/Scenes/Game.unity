@@ -1170,7 +1170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690416091}
   m_Layer: 0
-  m_Name: TARGET MAN
+  m_Name: TARGET
   m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,11 +2252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eb819d628f48e499d0b03619a68556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawner
-  spawnCount: 5
+  spawnCount: 1
   spawnArea: {x: 10, y: 0, z: 10}
   spawnHeight: 0
   monsterPrefabs: []
-  spawnInterval: 1
+  spawnInterval: 8
   timeLimit: 480
   winScene: Win
   timerText: {fileID: 185506681}
@@ -4196,18 +4196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   playerHP: 0
   playerMaxHP: 0
-  childHP:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  childMaxHP:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  childHP: 0000000000000000000000000000000000000000
+  childMaxHP: 0000000000000000000000000000000000000000
   minChildHP: 75
   maxChildHP: 125
   minPlayerHP: 75
@@ -4563,13 +4553,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739713643}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28776476, y: 0.23744692, z: 0.9228922, w: 0.095291264}
+  m_LocalRotation: {x: 0.115714006, y: 0.69757456, z: 0.69757456, w: -0.115714006}
   m_LocalPosition: {x: -117.0845, y: 2.5969, z: -54.96834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 211966720}
-  m_LocalEulerAnglesHint: {x: -22.546, y: 38.617, z: 160.22}
+  m_LocalEulerAnglesHint: {x: -90, y: 38.617, z: 160.22}
 --- !u!1 &1793550579
 GameObject:
   m_ObjectHideFlags: 0
@@ -6797,7 +6787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flashlight
   flashlight: {fileID: 2232318642577743059}
-  duration: 0.01
+  duration: 0.06
   distanceFromCamera: 2
 --- !u!23 &7147228777439230045
 MeshRenderer:

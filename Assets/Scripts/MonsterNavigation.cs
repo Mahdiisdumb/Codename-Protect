@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class MonsterNavigation : MonoBehaviour
 {
     public float DetectionRange = 5f;
@@ -16,9 +15,12 @@ public class MonsterNavigation : MonoBehaviour
     private bool isDying = false;
     [Header("Flash Damage Settings")]
     public int flashesToDieMin = 1;
-    public int flashesToDieMax = 3; 
+    public int flashesToDieMax = 3;
     private int flashesTaken = 0;
     private int flashesRequired;
+    [Header("Flash Hit Delay")]
+    public float hitDelay = 0.5f;
+    private float lastFlashHitTime = -10f;
     void Start()
     {
         if (agent == null)
@@ -38,6 +40,11 @@ public class MonsterNavigation : MonoBehaviour
     {
         if (isDying) return;
         agent.enabled = true;
+        HandleMovement();
+        DetectActiveFlashlight();
+    }
+    void HandleMovement()
+    {
         GameObject[] players = GameObject.FindGameObjectsWithTag(playerTag);
         GameObject target = null;
         float minDistance = float.MaxValue;
@@ -53,18 +60,13 @@ public class MonsterNavigation : MonoBehaviour
         if (target != null)
         {
             agent.speed = MonsterSpeedChase;
-            Chase(target.transform);
+            agent.destination = target.transform.position;
         }
         else if (points.Length > 0 && !agent.pathPending && agent.remainingDistance < 0.5f)
         {
             agent.speed = MonsterSpeedWander;
             Wander();
         }
-
-        if (target != null)
-            agent.destination = target.transform.position;
-
-        DetectActiveFlashlight();
     }
     void Chase(Transform target)
     {
@@ -79,6 +81,7 @@ public class MonsterNavigation : MonoBehaviour
     void DetectActiveFlashlight()
     {
         if (isDying) return;
+        if (Time.time - lastFlashHitTime < hitDelay) return;
         Flashlight[] flashes = FindObjectsOfType<Flashlight>();
         foreach (Flashlight flash in flashes)
         {
@@ -89,11 +92,10 @@ public class MonsterNavigation : MonoBehaviour
             if (angle <= flash.flashlight.spotAngle / 2f)
             {
                 flashesTaken++;
+                lastFlashHitTime = Time.time;
                 Debug.Log($"{name} hit by flash {flashesTaken}/{flashesRequired}");
                 if (flashesTaken >= flashesRequired)
-                {
                     StartCoroutine(FlashThenDie());
-                }
                 break;
             }
         }
@@ -106,7 +108,7 @@ public class MonsterNavigation : MonoBehaviour
         float elapsed = 0f;
         Color[] originalColors = new Color[renderers.Length];
         for (int i = 0; i < renderers.Length; i++)
-        originalColors[i] = renderers[i].material.color;
+            originalColors[i] = renderers[i].material.color;
         while (elapsed < flashDuration)
         {
             foreach (Renderer r in renderers) r.material.color = Color.red;
