@@ -4,7 +4,7 @@
 
 The tension ramps up as monsters swarm, and it’s your skill and strategy that determine who survives the night.
 
-Live demo: *(if applicable, insert URL here)*
+Live demo: https://codename-protect.vercel.app/
 
 ## Gameplay
 
