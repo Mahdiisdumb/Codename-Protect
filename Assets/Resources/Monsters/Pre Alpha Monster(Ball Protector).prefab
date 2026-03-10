@@ -193,8 +193,8 @@ MonoBehaviour:
   agent: {fileID: 2563865036478434353}
   waypointTag: Point
   playerTag: Point
-  flashesToDieMin: 5
-  flashesToDieMax: 25
+  flashesToDieMin: 1
+  flashesToDieMax: 5
   hitDelay: 0.09
 --- !u!114 &512132569116945415
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   player: {fileID: 0}
   radius: 20
   damagePerSecondMin: 1
-  damagePerSecondMax: 25
+  damagePerSecondMax: 5
   sceneToLoad: Death
   deathDelay: 4
 --- !u!1 &7181249816646091143
@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4436802866320989851}
   m_Layer: 0
-  m_Name: Pre Alpha Monster
+  m_Name: Pre Alpha Monster(Ball Protector)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
