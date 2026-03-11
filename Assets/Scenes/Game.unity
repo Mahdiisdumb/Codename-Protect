@@ -2259,7 +2259,7 @@ MonoBehaviour:
   - {fileID: 7181249816646091143, guid: b84f7fb75ff2c1540bf307a57ddb3e8a, type: 3}
   - {fileID: 7181249816646091143, guid: 2ed1164bb06fca74489f47f9156f1962, type: 3}
   spawnInterval: 2
-  timeLimit: 480
+  timeLimit: 240
   winScene: Win
   timerText: {fileID: 185506681}
 --- !u!4 &1236985777

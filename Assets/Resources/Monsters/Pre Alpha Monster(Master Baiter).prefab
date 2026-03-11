@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageZone
   player: {fileID: 0}
   radius: 20
-  damagePerSecondMin: 1
-  damagePerSecondMax: 5
+  damagePerSecondMin: 5
+  damagePerSecondMax: 10
   sceneToLoad: Death
   deathDelay: 4
 --- !u!1 &7181249816646091143
@@ -221,6 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4436802866320989851}
+  - component: {fileID: 160672948235282282}
   m_Layer: 0
   m_Name: Pre Alpha Monster(Master Baiter)
   m_TagString: Untagged
@@ -244,6 +245,28 @@ Transform:
   - {fileID: 6324778631729873730}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &160672948235282282
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181249816646091143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d992fb3eb5066d47961e28ed8546a11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2614130937122638882
 PrefabInstance:
   m_ObjectHideFlags: 0
